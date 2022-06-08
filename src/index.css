@@ -1,0 +1,189 @@
+@import "https://elixir-ui.netlify.app/Components/elixir.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: crimson;
+    --primary-bg-color: #ffb6c5;
+    --primary-active-color: rgb(173, 0, 35);
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.05rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: unset;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: inherit;
+    line-height: inherit;
+}
+
+.App {
+    max-width: 1240px;
+    margin: var(--space-2) auto;
+}
+
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    width: 100%;
+    gap: var(--space-2) var(--space-1);
+    height: 100%;
+    place-items: start;
+}
+
+.card {
+    gap: var(--space-0-75);
+    max-width: 250px;
+    width: 100%;
+    border-radius: var(--br-2);
+    height: 100%;
+    -webkit-border-radius: var(--br-2);
+    -moz-border-radius: var(--br-2);
+    -ms-border-radius: var(--br-2);
+    -o-border-radius: var(--br-2);
+}
+
+.card-header {
+    max-height: 18rem;
+    height: 100%;
+}
+
+.cart-product {
+    gap: 1rem;
+}
+
+.cart-product .card-header, .cart-product img {
+    max-height: 15rem;
+}
+
+.cart-products-wrapper  {
+    width: 100%;
+}
+
+img.product-image {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    object-position: top center;
+    border-radius: var(--br-2);
+    -webkit-border-radius: var(--br-2);
+    -moz-border-radius: var(--br-2);
+    -ms-border-radius: var(--br-2);
+    -o-border-radius: var(--br-2);
+}
+
+.card-main {
+    width: 100%;
+    flex: 1;
+    gap: var(--space-0-5);
+}
+
+.card-description {
+    font-size: unset;
+}
+
+.card-description .product-original-price {
+    text-decoration: line-through;
+}
+
+.btn {
+    border-radius: var(--br-2);
+    -webkit-border-radius: var(--br-2);
+    -moz-border-radius: var(--br-2);
+    -ms-border-radius: var(--br-2);
+    -o-border-radius: var(--br-2);
+}
+
+.cart-quantity {
+    width: 100%;
+    gap: 1rem;
+}
+
+.cart-quantity .btn {
+    width: 2rem;
+    min-width: unset;
+    height: 2rem;
+    border-radius: var(--br-50);
+    -webkit-border-radius: var(--br-50);
+    -moz-border-radius: var(--br-50);
+    -ms-border-radius: var(--br-50);
+    -o-border-radius: var(--br-50);
+}
+
+.cart-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: 'cart-products-wrapper cart-summary-wrapper';
+    width: 100%;
+    place-items: start;
+    gap: 1rem;
+}
+
+.summary-item {
+    gap: 0.5rem;
+}
+
+.cart-summary-wrapper  {
+    grid-area: cart-summary-wrapper;
+    border: 2px solid var(--light-gray-color);
+    width: 100%;
+}
+
+.cart-products-wrapper {
+    grid-area: cart-products-wrapper;
+}
+
+.saving-price {
+    width: 100%;
+    border-top: 2px solid var(--light-gray-color);   
+}
+
+@media screen and (max-width: 768px) {
+    .cart-page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'cart-summary-wrapper'
+        'cart-products-wrapper';
+        
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .App {
+        padding: 1rem;        
+    }
+}
