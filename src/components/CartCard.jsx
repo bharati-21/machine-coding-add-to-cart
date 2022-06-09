@@ -48,7 +48,11 @@ const CartProduct = ({ product, list }) => {
 	};
 
 	return (
-		<div className="card p-0-5 cart-product card-vertical flex-col flex-justify-center flex-align-center">
+		<div
+			className={`card p-0-5 cart-product card-vertical flex-col flex-justify-center flex-align-center ${
+				list === "save-for-later" ? "save-for-later" : "cart"
+			}`}
+		>
 			<div className="card-header flex-row flex-justify-center flex-align-center">
 				<img
 					className="card-img product-image"
@@ -71,6 +75,7 @@ const CartProduct = ({ product, list }) => {
 				<button
 					className="btn btn-primary"
 					onClick={handleDecreaseQuantity}
+					disabled={list === "save-for-later"}
 				>
 					-
 				</button>
@@ -78,6 +83,7 @@ const CartProduct = ({ product, list }) => {
 				<button
 					className="btn btn-primary"
 					onClick={handleIncreaseQuantity}
+					disabled={list === "save-for-later"}
 				>
 					+
 				</button>
